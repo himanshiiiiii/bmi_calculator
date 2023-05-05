@@ -11,60 +11,79 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     Widget list(){
-      return Column(
-        children: [
-          Text("4"),
-          Divider(
-            height: 4,
-            color: Colors.black,
-          ),
-          Padding(
-            padding: const EdgeInsets.only(left: 15),
-            child: Row(
-              children: [
-                Text("5"),
-                SizedBox(
-                  width: 5,
-                ),
-                Text("ft"),
-              ]
+      return SingleChildScrollView(
+        child: Column(
+          children: [
+            Text("4"),
+            Divider(
+              height: 8,
+              thickness: 2,
+              indent: 7,
+              endIndent: 7,
+              color: Color(0xFF4C53A5),
             ),
-          ),
+            Padding(
+              padding: const EdgeInsets.only(left: 37),
+              child: Row(
+                children: [
+                  Text("5"),
+                  SizedBox(
+                    width: 8,
+                  ),
+                  Text("ft"),
+                ]
+              ),
+            ),
 
             Divider(
-                height: 4,
-              color: Colors.black,
-              ),
+              height: 8,
+              thickness: 2,
+              indent: 7,
+              endIndent: 7,
+              color: Color(0xFF4C53A5),
+            ),
 
-            Text("6"),
+              Text("6"),
 
 
-        ],
+          ],
+        ),
       );
     }
     Widget list1(){
       return SingleChildScrollView(
         child: Column(
           children: [
-            Text("4"),
+            Text("2"),
             Divider(
-              height: 2,
+              height: 8,
+              thickness: 2,
+              indent: 7,
+              endIndent: 7,
+              color: Color(0xFF4C53A5),
             ),
             Row(
                 children: [
-                  Text("5"),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 37),
+                    child: Text("3"),
+                  ),
                   SizedBox(
-                    width: 2,
+                    width: 4,
                   ),
                   Text("inch"),
                 ]
             ),
 
             Divider(
-              height: 1,
+              height: 8,
+              thickness: 2,
+              indent: 7,
+              endIndent: 7,
+              color: Color(0xFF4C53A5),
             ),
 
-            Text("6"),
+            Text("4"),
 
 
           ],
@@ -144,7 +163,7 @@ child: Row(
     // width: 2,
     // ),
                 image: DecorationImage(image: AssetImage("assets/female.jpg",),
-                  // fit: BoxFit.fitHeight
+
                 ),
                 borderRadius: BorderRadius.circular(14.0),
                 color: Colors.white,
@@ -181,9 +200,9 @@ child: Row(
             Padding(padding: EdgeInsets.all(8.0),
 
               child: Container(
-                padding: EdgeInsets.only(top: 10,left: 100),
+                padding: EdgeInsets.only(top: 10,),
 margin: EdgeInsets.all(20),
-                height: 220,
+                height: 240,
                 decoration: BoxDecoration(
 
                   boxShadow:[ BoxShadow(
@@ -198,16 +217,50 @@ margin: EdgeInsets.all(20),
                 child: Column(
 
                   children: [
-                    Container(
-                      child: Row(
-                        children: [
-                          Text("Height(inch)",style: TextStyle(color: Colors.black45,fontSize: 18,fontWeight: FontWeight.bold)),
-                          Icon(Icons.arrow_drop_down),
-                        ],
-                      ),
+                    Row(
+                      children: [
+                        Padding(
 
+                padding: EdgeInsets.only(top: 10,left: 100),
+                          child: Text("Height(inch)",style: TextStyle(color: Colors.black45,fontSize: 18,fontWeight: FontWeight.bold)),
+                        ),
+                        Icon(Icons.arrow_drop_down),
+
+                      ],
                     ),
+Row(
 
+  children: [
+     Padding(
+       padding: EdgeInsets.only(top:30,right: 20,left: 40),
+       child: Container(
+         padding: EdgeInsets.symmetric(vertical: 10),
+         height:90,
+         width: 80,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(20),
+            color: Color(0xFFDBE9FC),
+          ),
+
+          child: list(),
+        ),
+     ),
+    Padding( padding: EdgeInsets.only(top:30,left: 40),
+      child: Container(
+        padding: EdgeInsets.symmetric(vertical: 10,horizontal: 2),
+        height:90,
+        width: 80,
+
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(20),
+          color: Color(0xFFDBE9FC),
+        ),
+        child: list1(),
+      ),
+    ),
+  ],
+),
+                   Padding(padding: EdgeInsets.only(top: 30),child: Text(" 5 feet 3 inches (160cm)", style: TextStyle(color: Colors.black45,fontSize: 18,fontWeight: FontWeight.bold),)),
     ]
     ),
               ),
@@ -333,24 +386,19 @@ margin: EdgeInsets.all(20),
         ],
       ),
 
-            InkWell(
-             onTap: (){
-              Navigator.pushNamed(context, "result");
-             },
-              child: ElevatedButton(onPressed: (){},
+            ElevatedButton(onPressed: (){Navigator.pushNamed(context, "/result");},
 
-                  child: Text("Calculate BMI",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 18),),
+                child: Text("Calculate BMI",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 18),),
 style: ButtonStyle(
   backgroundColor: MaterialStateProperty.all(Color(0xFF4C53A5)),
           padding: MaterialStateProperty.all(EdgeInsets.symmetric(vertical: 13,horizontal: 100),
 
 ),
   shape: MaterialStateProperty.all<RoundedRectangleBorder>(RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(20),
+              borderRadius: BorderRadius.circular(20),
 
-              ),
+            ),
   ),),
-              ),
             )
           ],
         ),

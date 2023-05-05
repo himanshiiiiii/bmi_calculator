@@ -5,8 +5,8 @@ void main() {
   runApp( MaterialApp(
     debugShowCheckedModeBanner: false,
     routes: {
-      // "/" :(context)=>Home(),
-      "/":(context)=>Result(),
+      "/" :(context)=>Home(),
+      "/result":(context)=>Result(),
 
     },
   )
